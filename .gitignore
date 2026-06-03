@@ -1,0 +1,11 @@
+work/
+*.wlf
+wlft*
+transcript
+DDFS.mpf
+DDFS.cr.mti
+dds_output.txt
+cadence_dac_output.csv
+book_extract.txt
+.codex-remote-attachments/
+*.bak
