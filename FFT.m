@@ -5,7 +5,6 @@ source_file = 'cadence_dac_output.csv';
 fs = 100e6;
 
 x = load(source_file);
-x = x(:).';
 N = length(x);
 
 v = x - mean(x);
