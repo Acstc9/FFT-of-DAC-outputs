@@ -3,13 +3,15 @@ clc;
 
 source_file = 'cadence_dac_output.csv';
 fs = 100e6;
+dc_bins = 3;
 
 x = load(source_file);
 N = length(x);
+w = ds_hann(N).';
 
-v = x - mean(x);
-
-spec = fft(v .* ds_hann(N)) / (N / 4);
+spec = fft(x .* w) / (N / 4);
+spec(1:dc_bins) = 0;
+spec(end-dc_bins+2:end) = 0;
 
 [~, fin] = max(abs(spec(2:N/2+1)));
 
